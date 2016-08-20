@@ -97,7 +97,7 @@
             </ul>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="">
+            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{ url('contact/create') }}">
                 create
             </a>
 

@@ -32,16 +32,38 @@
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                     <a class="mdl-navigation__link" href="">Portfolio</a>
-                    <a class="mdl-navigation__link is-active" href="{{ url('post') }}">Blog</a>
+                    <a class="mdl-navigation__link {{--is-active--}}" href="{{ url('post') }}">Blog</a>
                     <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
                     <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
+                    @if (Auth::guest())
+                        {{-- if user is not login --}}
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('login') }}">
+                            login
+                        </a>
+                    @else
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('admin') }}">
+                            Admin
+                        </a>
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
+                            Logout
+                        </a>
+                        {{--<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>--}}
+                    @endif
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                 <a class="mdl-navigation__link" href="">Portfolio</a>
-                <a class="mdl-navigation__link is-active" href="{{ url('post') }}">Blog</a>
+                <a class="mdl-navigation__link {{--is-active--}}" href="{{ url('post') }}">Blog</a>
                 <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
                 <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
             </nav>

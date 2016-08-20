@@ -10,6 +10,11 @@ use App\Http\Requests;
 
 class PostController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     public function index()
     {
         $posts = Post::where('status', '=', 'publish')->orderBy('created_at', 'desc')->get();

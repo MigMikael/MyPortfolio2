@@ -11,19 +11,22 @@
 |
 */
 
-Route::get('/', function()
-{
-	return view('welcome');
+Route::get('/', 'PostController@index');
+Route::get('welcome', function (){
+    return view('welcome');
 });
 
 
 Route::resource('category', 'CategoryController');
 Route::resource('post', 'PostController');
-Route::get('admin/post', 'PostController@admin');
 Route::resource('comment', 'CommentController');
 Route::resource('posttag', 'PostTagController');
 Route::resource('tag', 'TagController');
 Route::resource('contact', 'ContactController');
+
+
+Route::get('admin', 'AdminController@index');
+Route::get('admin/post', 'PostController@admin');
 
 
 Route::get('fileentry', 'FileEntryController@index');
@@ -36,11 +39,4 @@ Route::get('about', function()
     return view('about');
 });
 
-Route::get('admin', function()
-{
-    return view('admin/admin');
-});
-
 Route::auth();
-
-Route::get('/home', 'HomeController@index');

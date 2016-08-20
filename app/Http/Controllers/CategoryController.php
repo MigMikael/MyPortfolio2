@@ -8,6 +8,11 @@ use App\Http\Requests;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     public function index()
     {
         $categories = Category::all();
