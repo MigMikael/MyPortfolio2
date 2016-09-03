@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use App\Tag;
 use Request;
 use Log;
 use App\Http\Requests;
@@ -16,7 +17,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('category.index')->with('categories', $categories);
+        $tags = Tag::orderBy('name')->get();
+        return view('category.index')->with('categories', $categories)->with('tags', $tags);
     }
 
     public function create()

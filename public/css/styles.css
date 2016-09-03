@@ -1,6 +1,11 @@
 body {
     background: #ECEFF1;
 }
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
 .portfolio-header {
 
   background-image: url(../images/ocean.gif);
@@ -204,3 +209,25 @@ footer {
     width: 20%;
     height: 20%;
 }
+
+.artificial-image {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.artificial-image > h1 {
+    font-size: 700%;
+}
+
+.artificial-heading {
+    background-color: #3F51B5;
+    color: #FFFFFF;
+}
+
+.tag-content {
+    padding-top: 0%;
+    padding-left: 10%;
+    padding-right: 0%;
+    padding-bottom: 5%;
+}
+

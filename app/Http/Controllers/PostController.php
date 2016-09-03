@@ -12,7 +12,7 @@ class PostController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     public function index()
@@ -88,6 +88,12 @@ class PostController extends Controller {
     public function destroy($id)
     {
 
+    }
+
+    public function getByCategoryId($category_id)
+    {
+        $posts = Post::where('category_id', '=', $category_id)->orderBy('created_at', 'desc')->get();
+        return view('posts.index')->with('posts', $posts);
     }
 
     public function admin()

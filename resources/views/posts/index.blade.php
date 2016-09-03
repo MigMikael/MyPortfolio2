@@ -4,7 +4,7 @@
     @foreach($posts as $post)
         <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
             <div class="mdl-card__media">
-                <img class="article-image" src=" ../images/example-work08.jpg" border="0" alt="{{ $post->title }}">
+                <img class="article-image" src="{{ URL::asset('images/example-work08.jpg') }}" border="0" alt="{{ $post->title }}">
             </div>
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">{{ $post->title }}</h2>

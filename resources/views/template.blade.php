@@ -14,8 +14,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-red.min.css" />
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-red.min.css">
+    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
 
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
 
@@ -56,6 +56,7 @@
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                 <a class="mdl-navigation__link" href="">Portfolio</a>
                 <a class="mdl-navigation__link {{--is-active--}}" href="{{ url('post') }}">Blog</a>
+                <a class="mdl-navigation__link" href="{{ url('category') }}">Category</a>
                 <a class="mdl-navigation__link" href="{{ url('about') }}">About</a>
                 <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
             </nav>

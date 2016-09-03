@@ -28,9 +28,7 @@ class ContactController extends Controller
     public function store()
     {
         $input = Request::all();
-
         Contact::create($input);
-
         return redirect('contact');
     }
 }
