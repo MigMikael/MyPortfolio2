@@ -1,4 +1,4 @@
-@extends('template')
+@extends('userTemplate')
 
 @section('content')
     <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">

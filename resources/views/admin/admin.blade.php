@@ -1,25 +1,9 @@
-@extends('template')
+@extends('adminTemplate')
+
+@section('title', 'Home')
 
 @section('content')
-    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-card mdl-shadow--4dp">
-        <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Admin</h2>
-        </div>
-        <div class="mdl-card__media">
-            <img src="../images/contact-image.jpg" alt="Contact Me" border="0" class="article-image">
-        </div>
-
-        <div class="mdl-grid portfolio-copy">
-            <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding">
-                <strong> this use to be a dashboard card. </strong>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusantium ad architecto autem consectetur cupiditate dignissimos dolor,
-                dolore, eius eum explicabo in, ipsum iure minus nemo quae quibusdam quo reprehenderit voluptatibus?
-            </div>
-        </div>
-    </div>
-
-    <div class="mdl-cell mdl-cell--6-col mdl-card mdl-card mdl-shadow--4dp">
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">Portfolio</h2>
         </div>
@@ -41,7 +25,7 @@
         </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--6-col mdl-card mdl-card mdl-shadow--4dp">
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">Blog</h2>
         </div>
@@ -63,7 +47,7 @@
         </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--6-col mdl-card mdl-card mdl-shadow--4dp">
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">User</h2>
         </div>
@@ -85,7 +69,7 @@
         </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--6-col mdl-card mdl-card mdl-shadow--4dp">
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">Contact</h2>
         </div>

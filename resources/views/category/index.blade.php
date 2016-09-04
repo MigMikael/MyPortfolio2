@@ -1,4 +1,6 @@
-@extends('template')
+@extends('userTemplate')
+
+@section('title', 'Mig\'s blog - Category')
 
 @section('content')
     <div class="mdl-cell mdl-cell--12-col mdl-card__title mdl-shadow--4dp artificial-heading">

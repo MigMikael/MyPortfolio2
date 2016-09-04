@@ -16,7 +16,6 @@ Route::get('welcome', function (){
     return view('welcome');
 });
 
-
 Route::resource('category', 'CategoryController');
 Route::resource('post', 'PostController');
 Route::resource('comment', 'CommentController');
@@ -33,11 +32,5 @@ Route::get('admin/post', 'PostController@admin');
 Route::get('fileentry', 'FileEntryController@index');
 Route::get('fileentry/get/{filename}', ['as' => 'getentry', 'uses' => 'FileEntryController@get']);
 Route::post('fileentry/add',['as' => 'addentry', 'uses' => 'FileEntryController@add']);
-
-
-Route::get('about', function()
-{
-    return view('about');
-});
 
 Route::auth();

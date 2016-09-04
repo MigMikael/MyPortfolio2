@@ -6,7 +6,7 @@
     }
 </script>
 
-<div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
+<div class="mdl-card mdl-shadow--4dp">
     <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">Images</h2>
     </div>

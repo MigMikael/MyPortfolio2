@@ -1,4 +1,4 @@
-@extends('template')
+@extends('userTemplate')
 
 @section('content')
 {!! Form::open(['url'=>'category']) !!}

@@ -37,9 +37,7 @@ class PostController extends Controller {
     public function store()
     {
         $input = Request::all();
-
         Post::create($input);
-
         return redirect('post');
     }
     
@@ -76,11 +74,8 @@ class PostController extends Controller {
     public function update($id)
     {
         $post = Post::findOrFail($id);
-
         $newPost = Request::all();
-
         $post->update($newPost);
-
         return redirect('admin/post');
     }
 

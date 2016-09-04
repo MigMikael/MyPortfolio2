@@ -1,4 +1,6 @@
-@extends('template')
+@extends('userTemplate')
+
+@section('title', 'Mig\'s blog')
 
 @section('content')
     @foreach($posts as $post)

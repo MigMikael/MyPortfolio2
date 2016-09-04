@@ -1,5 +1,7 @@
 {{--Blog Post in Admin View--}}
-@extends('template')
+@extends('adminTemplate')
+
+@section('title', 'Post')
 
 @section('content')
     @foreach($posts as $post)
@@ -8,8 +10,9 @@
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    Update : {{ $post->updated_at }}
+                <hr>
+                <div class="mdl-card__supporting-text" style="color: #FFFFFF">
+                    Update : {{ $post->updated_at }}<br>
                     Status : {{ $post->status  }}
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
@@ -31,8 +34,9 @@
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    Update : {{ $post->updated_at }}
+                <hr>
+                <div class="mdl-card__supporting-text" style="color: #FFFFFF">
+                    Update : {{ $post->updated_at }}<br>
                     Status : {{ $post->status  }}
                 </div>
                 <div class="mdl-card__actions mdl-card--border">

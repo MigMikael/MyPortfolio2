@@ -1,4 +1,4 @@
-@extends('template')
+@extends('userTemplate')
 
 @section('content')
     <h1>New Contact</h1>
