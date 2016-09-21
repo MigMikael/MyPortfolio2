@@ -1,31 +1,20 @@
-@extends('userTemplate')
+@extends('adminTemplate')
+
+@section('title', 'Create Contact')
 
 @section('content')
-    <h1>New Contact</h1>
-    <hr>
-    <div class="mdl-grid">
-        {!! Form::open(['url'=>'contact']) !!}
-        <ul>
-            <li>
-                {!! Form::label('name', 'Name:') !!}
-                {!! Form::text('name') !!}
-            </li>
-            <li>
-                {!! Form::label('description', 'Description:') !!}
-                {!! Form::text('description') !!}
-            </li>
-            <li>
-                {!! Form::label('url', 'URL:') !!}
-                {!! Form::text('url') !!}
-            </li>
-            <li>
-                {!! Form::label('image', 'Image:') !!}
-                {!! Form::text('image') !!}
-            </li>
-            <li>
-                {!! Form::submit() !!}
-            </li>
-        </ul>
-        {!! Form::close() !!}
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--12-col-phone mdl-cell--12-col-tablet mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Content</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            {!! Form::open(['url'=>'contact', 'name' => 'createForm']) !!}
+                @include('category._formCreate', ['submitButtonText' => 'Create Contact'])
+            {!! Form::close() !!}
+        </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+        @include('fileentries._imagePanel', ['from' => 'contact'])
     </div>
 @stop

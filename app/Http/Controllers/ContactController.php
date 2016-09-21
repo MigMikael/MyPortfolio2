@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Request;
-
+use App\Fileentry;
 use App\Http\Requests;
 
 class ContactController extends Controller
@@ -22,7 +22,8 @@ class ContactController extends Controller
 
     public function create()
     {
-        return view('contact.create');
+        $images = Fileentry::all();
+        return view('contact.create')->with('images', $images);
     }
 
     public function store()

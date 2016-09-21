@@ -19,6 +19,6 @@
         {!! Form::close() !!}
         <div class="some-space"></div>
 
-        @include('fileentries._imagePanel')
+        @include('fileentries._imagePanel', ['from' => 'post'])
     </div>
 @stop

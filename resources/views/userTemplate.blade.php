@@ -24,12 +24,18 @@
                             Login
                         </a>
                     @else
-                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('admin') }}">
-                            Admin
-                        </a>
-                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
-                            Logout
-                        </a>
+                        @if(Auth::user()->id == 1)
+                            <a class="mdl-navigation__link" id="admin-menu" href="{{ url('admin') }}">
+                                Admin
+                            </a>
+                            <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
+                                Logout
+                            </a>
+                        @else
+                            <a class="mdl-navigation__link" id="admin-menu" href="{{ url('') }}">
+                                Profile
+                            </a>
+                        @endif
                     @endif
                 </nav>
             </div>

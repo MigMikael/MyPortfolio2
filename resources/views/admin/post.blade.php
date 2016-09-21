@@ -1,7 +1,7 @@
 {{--Blog Post in Admin View--}}
 @extends('adminTemplate')
 
-@section('title', 'Post')
+@section('title', 'Blog')
 
 @section('content')
     @foreach($posts as $post)
