@@ -15,10 +15,11 @@
 
     <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
         @include('posts._formOption', ['submitButtonText' => 'Post Blog'])
-
         {!! Form::close() !!}
-        <div class="some-space"></div>
 
+        <div class="some-space"></div>
+        @include('tag.create', ['submitButtonText' => 'Add Tag'])
+        <div class="some-space"></div>
         @include('fileentries._imagePanel', ['from' => 'post'])
     </div>
 @stop

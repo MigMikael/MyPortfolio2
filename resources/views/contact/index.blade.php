@@ -29,6 +29,10 @@
         </div>
     </div>
 
+    <div class="mdl-cell mdl-cell--12-col mdl-card__title mdl-shadow--4dp artificial-heading">
+        <h2 class="mdl-card__title-text">Contact</h2>
+    </div>
+
     @foreach($contacts as $contact)
         <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--2-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
             <div class="mdl-card__media">

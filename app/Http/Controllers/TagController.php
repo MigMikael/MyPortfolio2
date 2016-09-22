@@ -24,9 +24,21 @@ class TagController extends Controller {
 
     public function store()
     {
-        $input = Request::all();
-        Tag::create($input);
-        return redirect('tag');
+        $str = Request::get('name');
+        $str = strtolower($str);
+        $allTag = explode(" ", $str);
+        foreach ($allTag as $tag){
+            $thatTag = Tag::where('name', '=', $tag)->first();
+            if($thatTag == null){   // if that dose not exist
+                $data = [];
+                $data['name'] = $tag;
+                $data['slug'] = $tag;
+                Tag::create($data);
+                Log::info('#### crate tag >>>'.$tag);
+            }else {
+                Log::info('#### exist tag >>>'.$tag);
+            }
+        }
     }
 
     public function show($id)

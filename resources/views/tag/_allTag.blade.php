@@ -8,7 +8,7 @@
     <div class="mdl-card__supporting-text tag-content">
         @foreach($tags as $tag)
             @php
-                $newAlphabet = substr($tag->name, 0, 1);
+                $newAlphabet = strtoupper(substr($tag->name, 0, 1));
             @endphp
             @if($newAlphabet == $oldAlphabet)
                 <a href="">

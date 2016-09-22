@@ -6,6 +6,7 @@
             document.forms.createForm.content.value = text;
         }
     @elseif($from == 'contact')
+        // Todo fix bug add text to image input
         function addText(src){
             var text = "Yessssssss";
             document.forms.createForm.image.value = text;

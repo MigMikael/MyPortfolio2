@@ -38,6 +38,7 @@ class PostController extends Controller {
     {
         $input = Request::all();
         Post::create($input);
+        // Todo Handle hashTag here
         return redirect('post');
     }
     
@@ -89,6 +90,10 @@ class PostController extends Controller {
     {
         $posts = Post::where('category_id', '=', $category_id)->orderBy('created_at', 'desc')->get();
         return view('posts.index')->with('posts', $posts);
+    }
+
+    public function getByTag($tag_id){
+
     }
 
     public function admin()
