@@ -29,9 +29,21 @@ class CategoryController extends Controller
     public function store()
     {
         $input = Request::all();
-
         Category::create($input);
-
         return redirect('category');
+    }
+
+    public function edit($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('category.edit')->with('category', $category);
+    }
+
+    public function update($id)
+    {
+        $category = Category::findOrFail($id);
+        $newCategory = Request::all();
+        $category->update($newCategory);
+        return redirect('admin/category');
     }
 }

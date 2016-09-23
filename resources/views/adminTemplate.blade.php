@@ -25,13 +25,13 @@
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title"><b>Dashboard</b></span>
+            <span class="mdl-layout-title"><a href="{{ url('admin') }}"><b>Dashboard</b></a></span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="{{ url('admin') }}">Admin</a>
-                <a class="mdl-navigation__link" href="">Portfolio</a>
                 <a class="mdl-navigation__link" href="{{ url('admin/post') }}">Blog</a>
-                <a class="mdl-navigation__link" href="">Category</a>
+                <a class="mdl-navigation__link" href="{{ url('admin/category') }}">Category</a>
                 <a class="mdl-navigation__link" href="">Contact</a>
+                <a class="mdl-navigation__link" href="">User</a>
+                <a class="mdl-navigation__link" href="{{ url('post') }}">View Blog</a>
             </nav>
         </div>
         <main class="mdl-layout__content">

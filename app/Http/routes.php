@@ -26,7 +26,8 @@ Route::resource('contact', 'ContactController');
 Route::get('post/category/{category_id}', 'PostController@getByCategoryId');
 
 Route::get('admin', 'AdminController@index');
-Route::get('admin/post', 'PostController@admin');
+Route::get('admin/post', 'AdminController@getPost');
+Route::get('admin/category', 'AdminController@getCategory');
 
 
 Route::get('fileentry', 'FileEntryController@index');

@@ -95,14 +95,6 @@ class PostController extends Controller {
     public function getByTag($tag_id){
 
     }
-
-    public function admin()
-    {
-        $posts = Post::orderBy('created_at', 'desc')->get();
-        //$posts = Post::all()->orderBy('created_at', 'desc')->get(); wrong usage
-        return view('admin/post')->with('posts', $posts);
-    }
-  
 }
 
 ?>

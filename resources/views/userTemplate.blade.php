@@ -14,10 +14,10 @@
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link" href="">Portfolio</a>
-                    <a class="mdl-navigation__link {{--is-active--}}" href="{{ url('post') }}">Blog</a>
-                    <a class="mdl-navigation__link" href="{{ url('category') }}">Category</a>
-                    <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
+                    {{--<a class="mdl-navigation__link" href="">Portfolio</a>--}}
+                    <a class="mdl-navigation__link @if(isset($posts)) is-active @endif" href="{{ url('post') }}">Blog</a>
+                    <a class="mdl-navigation__link @if(isset($categories)) is-active @endif" href="{{ url('category') }}">Category</a>
+                    <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">About</a>
                     @if (Auth::guest())
                         {{-- if user is not login --}}
                         <a class="mdl-navigation__link" id="admin-menu" href="{{ url('login') }}">
@@ -25,8 +25,8 @@
                         </a>
                     @else
                         @if(Auth::user()->id == 1)
-                            <a class="mdl-navigation__link" id="admin-menu" href="{{ url('admin') }}">
-                                Admin
+                            <a class="mdl-navigation__link" id="admin-menu" href="{{ url('') }}">
+                                Profile
                             </a>
                             <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
                                 Logout
@@ -35,6 +35,9 @@
                             <a class="mdl-navigation__link" id="admin-menu" href="{{ url('') }}">
                                 Profile
                             </a>
+                            <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
+                                Logout
+                            </a>
                         @endif
                     @endif
                 </nav>
@@ -42,10 +45,32 @@
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link" href="">Portfolio</a>
-                <a class="mdl-navigation__link {{--is-active--}}" href="{{ url('post') }}">Blog</a>
-                <a class="mdl-navigation__link" href="{{ url('category') }}">Category</a>
-                <a class="mdl-navigation__link" href="{{ url('contact') }}">Contact</a>
+                {{--<a class="mdl-navigation__link" href="">Portfolio</a>--}}
+                <a class="mdl-navigation__link @if(isset($posts)) is-active @endif" href="{{ url('post') }}">Blog</a>
+                <a class="mdl-navigation__link @if(isset($categories)) is-active @endif" href="{{ url('category') }}">Category</a>
+                <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">About</a>
+                @if (Auth::guest())
+                    {{-- if user is not login --}}
+                    <a class="mdl-navigation__link" id="admin-menu" href="{{ url('login') }}">
+                        Login
+                    </a>
+                @else
+                    @if(Auth::user()->id == 1)
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('') }}">
+                            Profile
+                        </a>
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
+                            Logout
+                        </a>
+                    @else
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('') }}">
+                            Profile
+                        </a>
+                        <a class="mdl-navigation__link" id="admin-menu" href="{{ url('logout') }}">
+                            Logout
+                        </a>
+                    @endif
+                @endif
             </nav>
         </div>
 

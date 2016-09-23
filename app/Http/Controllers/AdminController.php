@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Post;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -16,5 +17,18 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin/admin');
+    }
+
+    public function getPost()
+    {
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        //$posts = Post::all()->orderBy('created_at', 'desc')->get(); wrong usage
+        return view('admin/post')->with('posts', $posts);
+    }
+
+    public function getCategory()
+    {
+        $categories = Category::all();
+        return view('admin/category')->with('categories', $categories);
     }
 }
