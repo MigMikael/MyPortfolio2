@@ -30,7 +30,7 @@ class CategoryController extends Controller
     {
         $input = Request::all();
         Category::create($input);
-        return redirect('category');
+        return redirect('admin/category');
     }
 
     public function edit($id)

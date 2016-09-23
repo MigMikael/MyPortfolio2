@@ -24,9 +24,11 @@
                 </a>
             </div>
             <div class="mdl-card__menu">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                {!! Form::model($contact, ['method' => 'DELETE', 'url'=>'contact/'.$contact->id]) !!}
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" type="submit">
                     <i class="material-icons">cancel</i>
                 </button>
+                {!! Form::close() !!}
             </div>
         </div>
     @endforeach

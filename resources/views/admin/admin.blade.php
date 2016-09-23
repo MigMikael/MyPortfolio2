@@ -9,9 +9,9 @@
         </div>
         <div class="mdl-card__supporting-text">
             <ul>
-                <li><h6>All : 26</h6></li>
-                <li><h6>Publish :20</h6></li>
-                <li><h6>Draft : 6</h6></li>
+                <li><h6>All Blog : {{ $allPostNum }}</h6></li>
+                <li><h6>Publish : {{ $publishPostNum }}</h6></li>
+                <li><h6>Draft : {{ $allPostNum - $publishPostNum }}</h6></li>
             </ul>
         </div>
         <div class="mdl-card__actions mdl-card--border">

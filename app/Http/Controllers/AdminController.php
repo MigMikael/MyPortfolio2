@@ -17,7 +17,9 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin/admin');
+        $allPostNum = Post::all()->count();
+        $publishPostNum = Post::where('status', 'publish')->count();
+        return view('admin/admin')->with('allPostNum', $allPostNum)->with('publishPostNum', $publishPostNum);
     }
 
     public function getPost()

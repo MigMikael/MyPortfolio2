@@ -46,4 +46,11 @@ class ContactController extends Controller
         $contact->update($newContact);
         return redirect('admin/contact');
     }
+
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return redirect('admin/contact');
+    }
 }
