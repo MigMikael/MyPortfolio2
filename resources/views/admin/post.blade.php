@@ -23,10 +23,11 @@
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('post/'.$post->id.'/edit') }}">
                         edit
                     </a>
-
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">
+                </div>
+                <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                         <i class="material-icons">cancel</i>
-                    </a>
+                    </button>
                 </div>
             </div>
         @else
@@ -47,10 +48,11 @@
                     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('post/'.$post->id.'/edit') }}">
                         edit
                     </a>
-
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">
+                </div>
+                <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                         <i class="material-icons">cancel</i>
-                    </a>
+                    </button>
                 </div>
             </div>
         @endif

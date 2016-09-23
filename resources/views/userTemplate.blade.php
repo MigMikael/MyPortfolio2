@@ -17,7 +17,7 @@
                     {{--<a class="mdl-navigation__link" href="">Portfolio</a>--}}
                     <a class="mdl-navigation__link @if(isset($posts)) is-active @endif" href="{{ url('post') }}">Blog</a>
                     <a class="mdl-navigation__link @if(isset($categories)) is-active @endif" href="{{ url('category') }}">Category</a>
-                    <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">About</a>
+                    <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">Contact</a>
                     @if (Auth::guest())
                         {{-- if user is not login --}}
                         <a class="mdl-navigation__link" id="admin-menu" href="{{ url('login') }}">
@@ -48,7 +48,7 @@
                 {{--<a class="mdl-navigation__link" href="">Portfolio</a>--}}
                 <a class="mdl-navigation__link @if(isset($posts)) is-active @endif" href="{{ url('post') }}">Blog</a>
                 <a class="mdl-navigation__link @if(isset($categories)) is-active @endif" href="{{ url('category') }}">Category</a>
-                <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">About</a>
+                <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">Contact</a>
                 @if (Auth::guest())
                     {{-- if user is not login --}}
                     <a class="mdl-navigation__link" id="admin-menu" href="{{ url('login') }}">

@@ -80,10 +80,11 @@ class PostController extends Controller {
         return redirect('admin/post');
     }
 
-
     public function destroy($id)
     {
-
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect('post');
     }
 
     public function getByCategoryId($category_id)

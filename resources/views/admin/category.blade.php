@@ -17,10 +17,16 @@
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ url('category/'.$category->id.'/edit') }}">
                     edit
                 </a>
-
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="">
-                    <i class="material-icons">cancel</i>
-                </a>
+            </div>
+            <div class="mdl-card__menu">
+                {!! Form::model($category, ['method' => 'DELETE', 'url'=>'category/'.$category->id]) !!}
+                    {{--{!! Form::hidden('name', null, ['class' => 'mdl-textfield__input', 'value' => $category->name]) !!}
+                    {!! Form::hidden('slug', null, ['class' => 'mdl-textfield__input', 'value' => $category->slug]) !!}
+                    {!! Form::hidden('description', null, ['class' => 'mdl-textfield__input', 'value' => $category->description]) !!}--}}
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" type="submit">
+                        <i class="material-icons">cancel</i>
+                    </button>
+                {!! Form::close() !!}
             </div>
         </div>
     @endforeach

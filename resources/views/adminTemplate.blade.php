@@ -8,7 +8,9 @@
                 mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">@yield('title')</span>
+                <span class="mdl-layout-title">
+                    @yield('title')
+                </span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
                     @if (Auth::guest())
@@ -29,7 +31,7 @@
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="{{ url('admin/post') }}">Blog</a>
                 <a class="mdl-navigation__link" href="{{ url('admin/category') }}">Category</a>
-                <a class="mdl-navigation__link" href="">Contact</a>
+                <a class="mdl-navigation__link" href="{{ url('admin/contact') }}">Contact</a>
                 <a class="mdl-navigation__link" href="">User</a>
                 <a class="mdl-navigation__link" href="{{ url('post') }}">View Blog</a>
             </nav>

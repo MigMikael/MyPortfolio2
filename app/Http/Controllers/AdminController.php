@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
@@ -30,5 +31,11 @@ class AdminController extends Controller
     {
         $categories = Category::all();
         return view('admin/category')->with('categories', $categories);
+    }
+
+    public function getContact()
+    {
+        $contacts = Contact::all();
+        return view('admin/contact')->with('contacts', $contacts);
     }
 }

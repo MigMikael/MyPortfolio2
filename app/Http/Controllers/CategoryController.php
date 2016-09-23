@@ -46,4 +46,11 @@ class CategoryController extends Controller
         $category->update($newCategory);
         return redirect('admin/category');
     }
+
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect('admin/category');
+    }
 }

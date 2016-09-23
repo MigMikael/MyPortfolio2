@@ -32,4 +32,18 @@ class ContactController extends Controller
         Contact::create($input);
         return redirect('contact');
     }
+
+    public function edit($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('contact.edit')->with('contact', $contact);
+    }
+
+    public function update($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $newContact = Request::all();
+        $contact->update($newContact);
+        return redirect('admin/contact');
+    }
 }
