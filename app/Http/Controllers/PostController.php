@@ -12,13 +12,20 @@ class PostController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show', 'getByCategoryId']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'getByCategoryId', 'getByPage']]);
     }
 
     public function index()
     {
-        $posts = Post::where('status', '=', 'publish')->orderBy('created_at', 'desc')->get();
-        return view('posts.index')->with('posts', $posts);
+        $currentPage = 1;
+        $lastPage = ceil(Post::where('status', '=', 'publish')->count() / 6);
+        $posts = Post::where('status', '=', 'publish')
+            ->orderBy('created_at', 'desc')
+            ->take(6)
+            ->get();
+        return view('posts.index')->with('posts', $posts)
+            ->with('currentPage', $currentPage)
+            ->with('lastPage', $lastPage);
     }
 
     public function create()
@@ -39,7 +46,7 @@ class PostController extends Controller {
         $input = Request::all();
         Post::create($input);
         // Todo Handle hashTag here
-        return redirect('post');
+        return redirect('admin/post');
     }
     
     public function show($id)
@@ -91,6 +98,20 @@ class PostController extends Controller {
     {
         $posts = Post::where('category_id', '=', $category_id)->orderBy('created_at', 'desc')->get();
         return view('posts.index')->with('posts', $posts);
+    }
+
+    public function getByPage($page)
+    {
+        $currentPage = $page;
+        $lastPage = ceil(Post::where('status', '=', 'publish')->count() / 6);
+        $posts = Post::where('status', '=', 'publish')
+            ->orderBy('created_at', 'desc')
+            ->skip(6*($page - 1))
+            ->take(6)
+            ->get();
+        return view('posts.index')->with('posts', $posts)
+            ->with('currentPage', $currentPage)
+            ->with('lastPage', $lastPage);
     }
 
     public function getByTag($tag_id){

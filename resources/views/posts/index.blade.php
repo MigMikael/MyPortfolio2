@@ -3,7 +3,14 @@
 @section('title', 'Mig\'s blog')
 
 @section('content')
-    @foreach($posts as $post)
+    @php
+        $nextPage = $currentPage + 1;  // 3
+        $prevPage = $currentPage - 1;  // 1
+    @endphp
+    @for($i = 0; $i < sizeof($posts); $i++)
+        @php
+            $post = $posts[$i];
+        @endphp
         <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
             <div class="mdl-card__media">
                 <img class="article-image" src="{{ URL::asset('images/example-work08.jpg') }}" border="0" alt="{{ $post->title }}">
@@ -25,6 +32,33 @@
                 </button>
             </div>
         </div>
-    @endforeach
+    @endfor
 
+
+
+    <div class="mdl-cell mdl-cell--12-col">{{--{{ $posts->links() }}--}}</div>
+
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone" style="text-align: center">
+        @if($currentPage != 1)
+            <a href="{{ url('post/page/'.$prevPage) }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">arrow_back</i>
+            </a>
+        @endif
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone" style="text-align: center">
+        <a href="{{ url('post') }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">apps</i>
+        </a>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone" style="text-align: center">
+        @if($currentPage != $lastPage)
+            <a href="{{ url('post/page/'.$nextPage) }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">arrow_forward</i>
+            </a>
+        @endif
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col"></div>
 @stop

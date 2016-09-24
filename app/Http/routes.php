@@ -24,6 +24,7 @@ Route::resource('tag', 'TagController');
 Route::resource('contact', 'ContactController');
 
 Route::get('post/category/{category_id}', 'PostController@getByCategoryId');
+Route::get('post/page/{page}', 'PostController@getByPage');
 
 Route::get('admin', 'AdminController@index');
 Route::get('admin/post', 'AdminController@getPost');
