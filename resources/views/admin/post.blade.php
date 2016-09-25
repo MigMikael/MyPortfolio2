@@ -3,6 +3,12 @@
 @section('title', 'Blog')
 
 @section('content')
+
+    <a href="{{ url('post/create') }}" class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--4-col-tablet
+        empty-card mdl-card mdl-shadow--4dp portfolio-card" style="text-align: center">
+            <i class="material-icons" style="font-size:200px;color:#EF5350;">add</i>
+    </a>
+
     @foreach($posts as $post)
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--4-col-tablet
             @if($post->status == 'publish')

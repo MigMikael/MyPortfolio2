@@ -193,6 +193,10 @@ footer {
     background: #EF5350;
 }
 
+.empty-card.mdl-card {
+    background: #FFFFFF;
+}
+
 .publish-card > .mdl-card__title,
 .publish-card > .mdl-card__actions,
 .publish-card > .mdl-card__actions > .mdl-button {

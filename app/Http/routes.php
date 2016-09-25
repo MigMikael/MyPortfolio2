@@ -23,6 +23,11 @@ Route::resource('posttag', 'PostTagController');
 Route::resource('tag', 'TagController');
 Route::resource('contact', 'ContactController');
 
+Route::get('about', function (){
+    $about = 0;
+    return view('about')->with('about', $about);
+});
+
 Route::get('post/category/{category_id}', 'PostController@getByCategoryId');
 Route::get('post/page/{page}', 'PostController@getByPage');
 
