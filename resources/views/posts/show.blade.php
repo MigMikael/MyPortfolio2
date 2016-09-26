@@ -6,22 +6,20 @@
             <h2 class="mdl-card__title-text">{{ $post -> title }}</h2>
         </div>
         <div class="mdl-card__media">
-            <img class="article-image" src="../images/portfolio-example-01.jpg" border="0" alt="">
+            {{--<img class="article-image" src="../images/portfolio-example-01.jpg" border="0" alt="">--}}
+            {!! $post->cover_image !!}
         </div>
         <div class="mdl-card__supporting-text">
             <strong>Category :</strong>
-            <a href="{{ url('category') }}">
+            <a href="{{ url('post/category/'.$category->id) }}">
                 <span>{{ $category -> name }}</span>
             </a>
         </div>
 
         <div class="mdl-grid portfolio-copy">
             <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Summary</h3>
-            <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding">
-                <p>{{ $post -> summary }}</p>
-            </div>
-            <div class="mdl-cell mdl-cell--6-col">
-                <img class="article-image" src="../images/portfolio-example-02.jpg" border="0" alt="">
+            <div class="mdl-cell mdl-cell--12-col">
+                {{ $post -> summary }}
             </div>
 
             <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Content</h3>

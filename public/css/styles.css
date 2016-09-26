@@ -267,3 +267,15 @@ footer {
     color: #FFFFFF;
 }
 
+/*Todo rewrite this crop image function*/
+.portfolio-card .mdl-card__media {
+    height: 330px;
+    width: 440px;
+}
+
+.card-image {
+    object-fit: cover; /* Do not scale the image */
+    object-position: top; /* Center the image within the element */
+    height: 100%;
+    width: 100%;
+}

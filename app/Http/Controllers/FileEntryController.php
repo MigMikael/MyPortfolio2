@@ -44,7 +44,7 @@ class FileEntryController extends Controller
 
     public function get($filename){
         $filename = str_replace('_','.',$filename);
-        Log::info('#### Change Filename '.$filename);
+        //Log::info('#### Change Filename '.$filename);
 
         $entry = Fileentry::where('filename', '=', $filename)->firstOrFail();
         $file = Storage::disk('public')->get($entry->filename);

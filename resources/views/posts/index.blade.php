@@ -11,9 +11,11 @@
         @php
             $post = $posts[$i];
         @endphp
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
             <div class="mdl-card__media">
-                <img class="article-image" src="{{ URL::asset('images/example-work08.jpg') }}" border="0" alt="{{ $post->title }}">
+                <a href="{{ url('post/'.$post->id) }}">
+                    {!! $post->card_image !!}
+                </a>
             </div>
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
@@ -22,7 +24,8 @@
                 {{ $post->description }}
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ url('post/'.$post->id) }}">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"
+                   href="{{ url('post/'.$post->id) }}">
                     Read more
                 </a>
             </div>
@@ -39,7 +42,7 @@
     <div class="mdl-cell mdl-cell--12-col">{{--{{ $posts->links() }}--}}</div>
 
 
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone" style="text-align: center">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet" style="text-align: center">
         @if($currentPage != 1)
             <a href="{{ url('post/page/'.$prevPage) }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">arrow_back</i>
@@ -47,12 +50,12 @@
         @endif
     </div>
 
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone" style="text-align: center">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--4-col-tablet" style="text-align: center">
         <a href="{{ url('post') }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
             <i class="material-icons">apps</i>
         </a>
     </div>
-    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone" style="text-align: center">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet" style="text-align: center">
         @if($currentPage != $lastPage)
             <a href="{{ url('post/page/'.$nextPage) }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">arrow_forward</i>

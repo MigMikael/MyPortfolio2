@@ -14,7 +14,7 @@
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link @if(isset($posts)) is-active @endif" href="{{ url('post') }}">Blog</a>
+                    <a class="mdl-navigation__link @if(isset($posts) || isset($post)) is-active @endif" href="{{ url('post') }}">Blog</a>
                     <a class="mdl-navigation__link @if(isset($categories)) is-active @endif" href="{{ url('category') }}">Category</a>
                     <a class="mdl-navigation__link @if(isset($about)) is-active @endif" href="{{ url('about') }}">About</a>
                     <a class="mdl-navigation__link @if(isset($contacts)) is-active @endif" href="{{ url('contact') }}">Contact</a>

@@ -4,6 +4,20 @@
     </div>
     <div class="mdl-card__supporting-text">
 
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            {!! Form::text('card_image', null, ['class' => 'mdl-textfield__input', 'placeholder' => 'image in first page']) !!}
+            {!! Form::label('card_image', 'Card Image:', ['class' => 'mdl-textfield__label']) !!}
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            {!! Form::text('cover_image', null, ['class' => 'mdl-textfield__input', 'placeholder' => 'image in heading of blog']) !!}
+            {!! Form::label('cover_image', 'Cover Image:', ['class' => 'mdl-textfield__label']) !!}
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            {!! Form::text('tag', null, ['class' => 'mdl-textfield__input', 'placeholder' => 'HashTag here']) !!}
+            {!! Form::label('tag', 'Tag:', ['class' => 'mdl-textfield__label']) !!}
+        </div>
 
         <div class="mdl-cell mdl-cell--12-col">
             {!! Form::select('category_id', $categories, null, ['placeholder' => 'Pick category']) !!}

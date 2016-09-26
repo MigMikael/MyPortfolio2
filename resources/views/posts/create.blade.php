@@ -17,8 +17,8 @@
         @include('posts._formOption', ['submitButtonText' => 'Post Blog'])
         {!! Form::close() !!}
         {{--Todo if change this change edit.blade.php too--}}
-        <div class="some-space"></div>
-        @include('tag.create', ['submitButtonText' => 'Add Tag'])
+        {{--<div class="some-space"></div>
+        @include('tag.create', ['submitButtonText' => 'Add Tag'])--}}
         <div class="some-space"></div>
         @include('fileentries._imagePanel', ['from' => 'post'])
     </div>

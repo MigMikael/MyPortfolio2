@@ -14,7 +14,7 @@
     </div>
 
     <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-        @include('posts._formOption', ['submitButtonText' => 'Post Blog'])
+        @include('posts._formOption', ['submitButtonText' => 'Finish Edit'])
 
         {!! Form::close() !!}
         <div class="some-space"></div>

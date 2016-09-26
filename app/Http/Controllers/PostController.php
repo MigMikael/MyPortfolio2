@@ -43,9 +43,26 @@ class PostController extends Controller {
     
     public function store()
     {
-        $input = Request::all();
-        Post::create($input);
-        // Todo Handle hashTag here
+        $blog_post = Request::only([
+            'category_id', 'title',
+            'slug', 'description',
+            'summary', 'content',
+            'status', 'comments',
+            'featured', 'card_image',
+            'cover_image'
+        ]);
+        $post = Post::create($blog_post);
+
+        $tag = Request::get('tag');
+        $args = [
+            'post_id' => $post->id,
+            'tag' => $tag,
+            '_token' => csrf_token()
+        ];
+        // Todo fix bug cannot call tag api
+        Log::info('#### From PostController tag = '.$tag.' post_id = '.$post->id);
+        $request = Request::create('tag', 'POST', $args);
+
         return redirect('admin/post');
     }
     
@@ -96,8 +113,15 @@ class PostController extends Controller {
 
     public function getByCategoryId($category_id)
     {
-        $posts = Post::where('category_id', '=', $category_id)->orderBy('created_at', 'desc')->get();
-        return view('posts.index')->with('posts', $posts);
+        $currentPage = 1;
+        $lastPage = ceil(Post::where('status', '=', 'publish')->count() / 6);
+        $posts = Post::where('category_id', '=', $category_id)
+            ->orderBy('created_at', 'desc')
+            ->take(6)
+            ->get();
+        return view('posts.index')->with('posts', $posts)
+            ->with('currentPage', $currentPage)
+            ->with('lastPage', $lastPage);
     }
 
     public function getByPage($page)

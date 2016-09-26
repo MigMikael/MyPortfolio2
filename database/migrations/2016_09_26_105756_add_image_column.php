@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRoleColumn extends Migration
+class AddImageColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,9 @@ class AddRoleColumn extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->text('role');
+        Schema::table('blog_posts', function (Blueprint $table) {
+            $table->text('card_image');
+            $table->text('cover_image');
         });
     }
 
@@ -24,8 +25,9 @@ class AddRoleColumn extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
+        Schema::table('blog_posts', function (Blueprint $table) {
+            $table->dropColumn('card_image');
+            $table->dropColumn('cover_image');
         });
     }
 }
