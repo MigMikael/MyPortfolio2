@@ -4,9 +4,11 @@ use App\Fileentry;
 use App\Post;
 use App\Category;
 use App\Comment;
+use App\Tag;
 use Request;
 use Log;
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller {
 
@@ -53,15 +55,10 @@ class PostController extends Controller {
         ]);
         $post = Post::create($blog_post);
 
-        $tag = Request::get('tag');
-        $args = [
-            'post_id' => $post->id,
-            'tag' => $tag,
-            '_token' => csrf_token()
-        ];
-        // Todo fix bug cannot call tag api
-        Log::info('#### From PostController tag = '.$tag.' post_id = '.$post->id);
-        $request = Request::create('tag', 'POST', $args);
+        $isCreate = true;
+        $strTag = Request::get('tag');
+        Log::info('#### From PostController@store tag = '.$strTag.' post_id = '.$post->id);
+        self::handleTag($post->id, $strTag, $isCreate);
 
         return redirect('admin/post');
     }
@@ -99,8 +96,21 @@ class PostController extends Controller {
     public function update($id)
     {
         $post = Post::findOrFail($id);
-        $newPost = Request::all();
+        $newPost = Request::only([
+            'category_id', 'title',
+            'slug', 'description',
+            'summary', 'content',
+            'status', 'comments',
+            'featured', 'card_image',
+            'cover_image'
+        ]);
         $post->update($newPost);
+
+        $isCreate = false;
+        $strTag = Request::get('tag');
+        if($strTag != null){
+            self::handleTag($post->id, $strTag, $isCreate);
+        }
         return redirect('admin/post');
     }
 
@@ -140,6 +150,35 @@ class PostController extends Controller {
 
     public function getByTag($tag_id){
 
+    }
+
+    public function handleTag($post_id, $strTag, $isCreate)
+    {
+        if(!$isCreate){  // delete exist hashTag
+            DB::table('blog_post_tag')->where('post_id', '=', $post_id)->delete();
+        }
+
+        $strTag = strtolower($strTag);
+        $allTag = explode(" ", $strTag);
+        foreach ($allTag as $tag){
+            $newTag = null;
+            $thatTag = Tag::where('name', '=', $tag)->first();
+            if($thatTag == null){   // if that dose not exist
+                $data = [
+                    'name' => $tag,
+                    'slug' => $tag
+                ];
+                $newTag = Tag::create($data);
+            }else {
+                $newTag = $thatTag; // if tag is exist
+            }
+            // insert new hastTag;
+            DB::table('blog_post_tag')->insert([
+                'tag_id' => $newTag->id,
+                'post_id' => $post_id
+            ]);
+        }
+        Log::info('#### create tag complete');
     }
 }
 

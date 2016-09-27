@@ -11,30 +11,25 @@
         @php
             $post = $posts[$i];
         @endphp
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
+        <a class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp portfolio-card"
+           href="{{ url('post/'.$post->id) }}" >
             <div class="mdl-card__media">
-                <a href="{{ url('post/'.$post->id) }}">
-                    {!! $post->card_image !!}
-                </a>
+                {!! $post->card_image !!}
             </div>
             <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">{{ $post->title }}</h2>
+                <h2 class="mdl-card__title-text"><b>{{ $post->title }}</b></h2>
             </div>
             <div class="mdl-card__supporting-text mdl-card--expand">
                 {{ $post->description }}
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"
-                   href="{{ url('post/'.$post->id) }}">
-                    Read more
-                </a>
+                <hr>
+                <i>{{ $post->updated_at }}</i>
             </div>
             <div class="mdl-card__menu">
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                     <i class="material-icons">share</i>
                 </button>
             </div>
-        </div>
+        </a>
     @endfor
 
 

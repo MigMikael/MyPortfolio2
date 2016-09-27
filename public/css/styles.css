@@ -98,6 +98,10 @@ a:hover, a:visited, a:link, a:active {
   padding-bottom: 0;
 }
 
+.portfolio-card:hover {
+
+}
+
 .portfolio-blog-card-full-bg {
   background: url(../images/example-blog03.jpg) center / cover;
 }
@@ -190,7 +194,7 @@ footer {
 }
 
 .draft-card.mdl-card {
-    background: #EF5350;
+    background: rgb(244,67,54);
 }
 
 .empty-card.mdl-card {
@@ -267,7 +271,7 @@ footer {
     color: #FFFFFF;
 }
 
-/*Todo rewrite this crop image function*/
+/*Todo rewrite crop image function it not works in edge*/
 .portfolio-card .mdl-card__media {
     height: 330px;
     width: 440px;
