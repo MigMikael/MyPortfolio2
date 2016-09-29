@@ -69,13 +69,26 @@ class PostController extends Controller {
         //Log::info('*** '. $post['comments']);
         $category = Category::findOrFail($post['category_id']);
         //Log::info('*** '. $category['name']);
+        $blog_tag_ids = DB::table('blog_post_tag')->where('post_id', '=', $id)->get();
+
+        $blog_tags = [];
+        foreach ($blog_tag_ids as $blog_tag_id){
+            $tag = Tag::where('id', '=', $blog_tag_id->tag_id)->first();
+            Log::info('### '.$tag->name);
+            array_push($blog_tags, $tag);
+        }
 
         if($post['comments']) {
             $comments = Comment::where('post_id', '=', $post['id'])->get();
-            return view('posts.show')->with('post', $post)->with('comments', $comments)->with('category', $category);
+            return view('posts.show')->with('post', $post)
+                ->with('comments', $comments)
+                ->with('category', $category)
+                ->with('blog_tags', $blog_tags);
         }
         else {
-            return view('posts.show')->with('post', $post)->with('category', $category);
+            return view('posts.show')->with('post', $post)
+                ->with('category', $category)
+                ->with('blog_tags', $blog_tags);
         }
     }
 

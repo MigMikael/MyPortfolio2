@@ -34,9 +34,11 @@
 
             <div class="mdl-cell mdl-cell--12-col">
                 Tag :
-                <span class="mdl-chip">
-                    <span class="mdl-chip__text">Basic Chip</span>
-                </span>
+                @foreach($blog_tags as $blog_tag)
+                    <span class="mdl-chip">
+                        <span class="mdl-chip__text">{{ $blog_tag->name }}</span>
+                    </span>
+                @endforeach
             </div>
         </div>
     </div>

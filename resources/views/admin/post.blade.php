@@ -22,6 +22,7 @@
             </div>
             <hr>
             <div class="mdl-card__supporting-text" style="color: #FFFFFF">
+                ID : {{ $post->id }}<br>
                 Update : {{ $post->updated_at }}<br>
                 Status : {{ $post->status  }}
             </div>

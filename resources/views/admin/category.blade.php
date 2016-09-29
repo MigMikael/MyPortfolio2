@@ -4,7 +4,7 @@
 
 @section('content')
     @foreach($categories as $category)
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--2-col-tablet mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--2-col-tablet mdl-card mdl-shadow--4dp">
             <div class="mdl-card__media artificial-image" style="background-color: {{ sprintf('#%06X', mt_rand(0, 0xFFFFFF)) }}">
                 <h1><b>{{ substr($category->name, 0, 1) }}</b></h1>
             </div>
@@ -33,4 +33,9 @@
             </div>
         </div>
     @endforeach
+
+    <a href="{{ url('category/create') }}" class="mdl-cell mdl-cell--3-col mdl-cell--2-col-phone mdl-cell--2-col-tablet
+        mdl-card mdl-shadow--4dp portfolio-card" style="text-align: center">
+        <i class="material-icons" style="font-size:200px;color:#EF5350;">add</i>
+    </a>
 @stop

@@ -272,7 +272,7 @@ footer {
 }
 
 /*Todo rewrite crop image function it not works in edge*/
-.portfolio-card .mdl-card__media {
+.portfolio-card > .mdl-card__media {
     height: 330px;
     width: 440px;
 }
