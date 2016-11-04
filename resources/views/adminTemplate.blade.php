@@ -33,7 +33,7 @@
                 <a class="mdl-navigation__link" href="{{ url('admin/category') }}">Category</a>
                 <a class="mdl-navigation__link" href="{{ url('admin/contact') }}">Contact</a>
                 <a class="mdl-navigation__link" href="">User</a>
-                <a class="mdl-navigation__link" href="{{ url('post') }}">View Blog</a>
+                <a class="mdl-navigation__link" href="{{ url('post') }}" target="_blank">View Blog</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
