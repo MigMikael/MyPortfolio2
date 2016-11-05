@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74f77d73-11fb-4013-af5b-cb8b53b9ef57" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/userTemplate.blade.php" afterPath="$PROJECT_DIR$/resources/views/userTemplate.blade.php" />
     </list>
     <ignored path="MyPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,21 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="122">
+              <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTableSeeder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserTableSeeder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="144">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding>
                 <element signature="e#7#38#0#PHP" expanded="true" />
               </folding>
@@ -581,7 +578,7 @@
       <workItem from="1478361935071" duration="1264000" />
       <workItem from="1478365062505" duration="261000" />
       <workItem from="1478367502304" duration="2284000" />
-      <workItem from="1478373719845" duration="5804000" />
+      <workItem from="1478373719845" duration="5922000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1468173196306</created>
@@ -825,7 +822,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367136000" />
+    <option name="totallyTimeSpent" value="367254000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1303,14 +1300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1321,11 +1310,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="144">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
             <element signature="e#7#38#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
