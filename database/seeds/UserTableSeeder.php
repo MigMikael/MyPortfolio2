@@ -15,7 +15,8 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Chanachai Puttaruksa',
             'email' => 'Chanachai_mig@hotmail.com',
-            'password' => bcrypt('mig39525G'),
+            // Todo change This before commit to heroku
+            'password' => bcrypt(''),
             'role' => 'admin',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),

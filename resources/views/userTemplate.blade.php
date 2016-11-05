@@ -24,7 +24,7 @@
                             Login
                         </a>--}}
                     @else
-                        @if(Auth::user()->id == 1)
+                        @if(Auth::user()->role == 'admin')
                             <a class="mdl-navigation__link" id="admin-menu" href="{{ url('admin') }}">
                                 Admin
                             </a>

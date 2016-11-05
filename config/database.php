@@ -9,16 +9,37 @@ $database = substr($url["path"], 1);
 
 return [
     'fetch' => PDO::FETCH_CLASS,
-    //'default' => env('DB_CONNECTION', 'mysql'),
     'default' => 'pgsql',
     'connections' => [
-
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+        'pgsql' => [
+            'driver' => 'pgsql',
+            'host' => $host,
+            'port' => 5432,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+            'charset' => 'utf8',
             'prefix' => '',
+            'schema' => 'public',
         ],
+    ],
+    'migrations' => 'migrations',
+    'redis' => [
+        'cluster' => false,
+        'default' => [
+            'host' => env('REDIS_HOST', 'localhost'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 0,
+        ],
+    ],
+];
 
+
+/*return [
+    'fetch' => PDO::FETCH_CLASS,
+    'default' => env('DB_CONNECTION', 'mysql'),
+    'connections' => [
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
@@ -32,26 +53,10 @@ return [
             'strict' => false,
             'engine' => null,
         ],
-
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => $host,
-            'port' => 5432,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-        ],
     ],
-
     'migrations' => 'migrations',
-
     'redis' => [
-
         'cluster' => false,
-
         'default' => [
             'host' => env('REDIS_HOST', 'localhost'),
             'password' => env('REDIS_PASSWORD', null),
@@ -59,4 +64,4 @@ return [
             'database' => 0,
         ],
     ],
-];
+];*/
